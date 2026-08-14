@@ -36,6 +36,12 @@ jobs:
          ps aux | grep uvicorn
          ps aux | grep celery
 
+      - name: Start FastAPI
+        run: |
+          uv run uvicorn main:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 &
+          echo $! > uvicorn.pid
+          sleep 10
+
       - name: Server health check
         run: |
          curl http://localhost:8000/health
