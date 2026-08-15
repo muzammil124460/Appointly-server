@@ -9,8 +9,8 @@ from src.db.DataBase import Base,DB
 app = FastAPI(title="MyApp")
 
 origins = [
-    "https://saasai-f.onrender.com",  # Sahi url bina aakhiri '/' ke
-    "http://localhost:5173"           # Localhost agar test karna ho
+    "https://appointly-frontend.onrender.com",  
+    "http://localhost:5173"         
 ]
 
 app.add_middleware(
