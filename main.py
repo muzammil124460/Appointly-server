@@ -32,7 +32,7 @@ app.include_router(admin_route)
 
 
 
-@app.get("/")
+@app.get("/check")
 def health_check(db: Session = Depends(get_db)):
     try:
         data = db.query(ai_Database).limit(1).all()
